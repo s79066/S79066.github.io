@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Husna Athirah | Student Bento Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /*
+         * Theme: UMT Ocean Pink
+         * Color Palette: Whites, Soft Greys, and a Deep Pink Accent
+         */
+
+        :root {
+            --color-bg: #f7f7f9;        /* Soft Off-White/Light Grey */
+            --color-card-bg: #ffffff;   /* Pure White for Cards */
+            --color-text: #1f2937;      /* Dark Grey/Almost Black */
+            --color-text-secondary: #6b7280; /* Medium Grey */
+            /* New Ocean Pink Accent Color (Deep, vibrant pink) */
+            --color-accent: #e91e63;    /* Deep Ocean Pink */ 
+            --color-accent-dark: #c2185b; /* Darker accent for hover */
+            --color-border: #e5e7eb;    /* Light Border Grey */
+            --card-border-radius: 12px;
+            --card-padding: 24px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .bento-container {
+            width: 100%;
+            max-width: 1200px;
+            display: grid;
+            /* 4-column grid for desktop layout */
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            gap: 16px;
+        }
+
+        .bento-card {
+            background-color: var(--color-card-bg);
+            border-radius: var(--card-border-radius);
+            padding: var(--card-padding);
+            border: 1px solid var(--color-border);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: transform 0.2s ease-out;
+        }
+        
+        /* Optional: Subtle hover effect for visual polish */
+        .bento-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        /* --- Desktop Grid Sizing --- */
+        .card-1 { grid-column: span 2; grid-row: span 2; } /* Profile: 2x2 */
+        .card-2 { grid-column: span 1; grid-row: span 1; } /* Location: 1x1 */
+        .card-3 { grid-column: span 1; grid-row: span 1; } /* Subjects: 1x1 */
+        .card-4 { grid-column: span 2; grid-row: span 1; } /* Case Study: 2x1 */
+        .card-5 { grid-column: span 1; grid-row: span 1; } /* Hobby: 1x1 */
+        .card-6 { grid-column: span 4; } /* Playlist: 4x1 wide bottom */
+
+        /* --- Card Content Styles --- */
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--color-text-secondary);
+        }
+
+        .meta-info {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            padding: 6px 12px;
+            border-radius: 20px; /* Pill shape for tags */
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            border: 1px solid var(--color-border);
+            transition: background-color 0.2s;
+        }
+
+        .tag:hover {
+            background-color: var(--color-accent);
+            color: var(--color-card-bg);
+            border-color: var(--color-accent);
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin-right: 15px;
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: var(--color-accent-dark);
+        }
+
+        .accent-text {
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        .time-display {
+            font-size: 2.5rem; /* Slightly smaller for better fit */
+            font-weight: 700;
+            margin-top: auto;
+            text-align: center;
+            color: var(--color-accent);
+        }
+
+        /* --- Mobile Responsiveness (Vertical Stack) --- */
+        @media (max-width: 767px) {
+            body {
+                padding: 10px;
+            }
+            .bento-container {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .bento-card {
+                grid-column: span 1 !important;
+                grid-row: span 1 !important;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="bento-container">
+
+    <div class="bento-card card-1">
+        <h1>HUSNA ATHIRAH</h1>
+        <h2>Innovating food safety.</h2>
+        <div class="meta-info">
+            Program: <span class="accent-text">Food Science</span> | Year: <span class="accent-text">Year 1</span>
+        </div>
+        <p>Currently focusing on fundamental principles of food preservation and quality control at UMT.</p>
+
+        <div style="margin-top: auto; padding-top: 15px;">
+            <h3>Connect</h3>
+            <div class="social-links">
+                <a href="#">LinkedIn</a>
+                <a href="#">GitHub</a>
+                <a href="#">UMT Portal</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bento-card card-2">
+        <h3>Location</h3>
+        <p class="meta-info">UMT, Kuala Nerus, Terengganu</p>
+        <div class="time-display" id="time-display">00:00 AM</div>
+    </div>
+
+    <div class="bento-card card-3">
+        <h3>Current Focus</h3>
+        <p class="meta-info">Core knowledge development:</p>
+        <div>
+            <span class="tag">Food Chemistry</span>
+            <span class="tag">Microbiology</span>
+            <span class="tag">Excel & Data</span>
+            <span class="tag">Lab Analysis</span>
+        </div>
+    </div>
+
+    <div class="bento-card card-4">
+        <h3>Case Study Preview</h3>
+        <h2 style="margin-top: 5px;">Starch Gelatinization in Local Kuih</h2>
+        <p>A fascinating analysis of how starch retrogradation impacts the texture profiles, specifically the chewiness and moisture retention, of traditional <span class="accent-text">Kuih Lapis</span>.  This research contributes to improving product quality and shelf stability.</p>
+        <p class="meta-info" style="margin-top: 10px;">Tools Used: Texturometer, $\text{DSC}$</p>
+    </div>
+
+    <div class="bento-card card-5">
+        <h3>Relaxation</h3>
+        <p class="meta-info">A necessary break from the lab work:</p>
+        <p style="margin-top: 10px;"><span class="accent-text">Evening walks at Pantai UMT</span>. The fresh ocean air is perfect for clearing the mind.</p>
+    </div>
+
+    <div class="bento-card card-6">
+        <h3>Study Playlist</h3>
+        <p class="meta-info">Ambient tracks for maximum concentration.</p>
+        <div style="background-color: var(--color-bg); padding: 20px; border-radius: 8px; text-align: center; margin-top: 10px;">
+            <p style="color: var(--color-text-secondary); margin: 0;">[Placeholder for Embedded Music Player Widget]</p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // Simple JavaScript to update the local time for Card 2
+    function updateTime() {
+        const timeDisplay = document.getElementById('time-display');
+        if (timeDisplay) {
+            // Get the current time in the local timezone (UMT, Kuala Nerus, Malaysia, UTC+8)
+            const now = new Date();
+            const options = { 
+                hour: 'numeric', 
+                minute: '2-digit', 
+                hour12: true, 
+                timeZone: 'Asia/Kuala_Lumpur' // Specific timezone for accuracy (UMT location)
+            };
+            timeDisplay.textContent = now.toLocaleTimeString('en-US', options);
+        }
+    }
+
+    // Update time immediately and then every minute
+    updateTime();
+    // Using 1000ms (1 second) interval for perceived real-time update, though 60000ms is sufficient for only minutes
+    setInterval(updateTime, 1000); 
+</script>
+
+</body>
+</html>
